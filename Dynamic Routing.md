@@ -4,7 +4,7 @@ Network Route: A route to a network/subnet (mask length < /32)
 Host route: A route to a specific host (/32 mask)
 
 - Routers form  'adjacencies' / 'neighbor relationships' / 'neighborships' with directly connected neighbors to exchange information
-==- Routers 'advertise' information using dynamic routing protocols about the routes they know to other routers==
+- ==Routers 'advertise' information using dynamic routing protocols about the routes they know to other routers==
 	- They keep sharing with each other until all routers in the network are reachable
 - If an interface goes down, other routers automatically remove the route from the routing tables
 	- As opposed to static routing where routers will keep trying to reach the downed network
@@ -51,7 +51,7 @@ Host route: A route to a specific host (/32 mask)
 - Invented before link state protocols (RIPv1, IGRP –> EIGRP)
 - Operates by sending information to its directly connected neighbors
 - 'routing by rumor'
-	==- Each route only knows what its neighbor tells it:==
+	- ==Each route only knows what its neighbor tells it:==
 		- *Its known destination networks*
 		- *Its metric to reach its known destination networks*
 - ==Routers only learn the 'distance' (metric) and the 'vector' (direction, next-hop router) of each route==
@@ -65,7 +65,7 @@ Host route: A route to a specific host (/32 mask)
 - Protocols used today: OSPF, IS-IS
 
 <span style="font-size: 1.2em">Dynamic Routing Protocol Metrics:</span>
-==- Routing tables display the best route to each destination network it knows about==
+- ==🔵Routing tables display the best route to each destination network it knows about==
 - If there are multiple routes to the same destination, it uses **metric** to determine which is best
 	- Lower metric = better
 - ==Each protocol uses a different metric== to determine which route is the best
@@ -111,7 +111,7 @@ O     192.168.4.0/24 [110/3] via 10.0.13.2, 00:00:09, GigabitEthernet1/0
 </table>
 
 <span style="font-size: 1.2em">Administrative Distance (AD):</span>
-- When multiple protocols are in use,  ==AD is used to determine which routing protocol is preferred==
+- When multiple protocols are in use, ==AD is used to determine which routing protocol is preferred==
 	- Most of the time a company will only use a single IGP– usually OSPF or EIGRP
 	- Sometimes, they might use two. Ex. two companies using different routing protocols might connect their networks to share information
 - Different routing protocols use different metrics, so they cannot be compared
