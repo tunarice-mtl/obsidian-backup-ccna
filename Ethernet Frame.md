@@ -7,13 +7,13 @@
 	<th>Trailer</th>
 </tr>
 <tr>
-    <th>Preamble</th>
-	<th>SFD</th>
-	<th>Destination MAC</th>
-	<th>Source MAC</th>
-	<th>Type/Length</th>
-	<th>Packet</th>
-	<th>FCS</th>
+    <td>Preamble</td>
+	<td>SFD</td>
+	<td>Destination MAC</td>
+	<td>Source MAC</td>
+	<td>Type/Length</td>
+	<td>Packet</td>
+	<td>FCS</td>
 </tr>
 <tr>
 	<td>7 bytes</td>
@@ -51,9 +51,9 @@
 	<th>ARP</th>
 </tr>
 <tr>
-	<th>0x800</th>
-	<th>0x86DD</th>
-	<th>0x0806</th>
+	<td>0x800</td>
+	<td>0x86DD</td>
+	<td>0x0806</td>
 </tr>
 </table>
 

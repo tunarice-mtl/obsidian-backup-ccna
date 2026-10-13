@@ -1,8 +1,10 @@
 (Day 25)
 
-<span style="font-size: 1.2em">RIP (Routing Information Protocol):</span>
+See [[EIGRP]].
+
+<u><span style="font-size: 1.2em">RIP (Routing Information Protocol):</span></u>
 - Distance vector IGP ('routing by rumor')
-- ==🟡Hop count as a metric,== ==🟢max hop count = **15** ==(anything more considered unreachable)
+- ==🟡Hop count as a metric,== ==🟢max hop count is = **15**== (anything more considered unreachable)
 - Three versions
 	- IPv4: RIPv1, RIPv2
 	- IPv6: RIPng (RIP Next Generation)
@@ -40,6 +42,7 @@ R1(config-router)#no auto-summary
 
 ==🟠**network** command:==
 	- Look for interfaces with an IP address that is in the specified range
+	- ==🔵Broadly, this is how you set the protocol of whatever interface matches==
 	- Activate RIP on that fall in the range and form adjacencies with connected RIP neighbors
 	- ==🔵Advertise **the network prefix of the interface** (NOT the prefix in the **network** command)==
 	- OSPF and EIGRP network commands operate in the same way
@@ -91,20 +94,5 @@ R1#show ip protocols
 - Passive interfaces, rip neighbors
 - Administrative distance: edit using ==🟠distance \[administrative distance (1 - 255)]== command
 
-<span style="font-size: 1.2em">EIGRP (Enhanced Interior Gateway Routing Protocol):</span>
-- Used to be Cisco proprietary but now published openly. But OSPF is still used more
-- 'advanced' / 'hybrid' distance vector routing protocol
-- Faster reaction to changes than RIP and no 15 'hop-count' max
-- Sends messages using ==multicast address 224.0.0.10==
-- ==🔵The only IGP that can perform **unequal**-cost load-balancing (by default, ECMP load-balancing over 4 paths like RIP)==
-	- Can be configured to load-balance over multiple paths that don't have equal cost. Will even ==load-balance in proportion to bandwidth== of individual paths (more traffic over lower metric paths and vice versa)
 
-<span style="font-size: 1.2em">EIGRP Configuration:</span>
-- You can have EIGRP and RIP configured on a router at the same time but why would you do that
-```
-R1(config)#router eigrp 1
-R1(config-router)#no auto-summary
-```
-
-
-[[CCNA]] [[Dynamic Routing]]
+[[CCNA]] [[Dynamic Routing]] [[EIGRP]]

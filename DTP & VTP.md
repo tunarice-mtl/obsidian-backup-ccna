@@ -83,6 +83,7 @@ If the interface is in access mode or switchport nonegotiate command, "Negotiati
 - VTP versions v1, v2, and v3
 	- VTPv2 has support for Token Ring VLANs. If you aren't using them, no reason to use VTPv2 over VTPv1
 - Three VTP modes: **server**, **client**, and **transparent**
+
 <span style="font-size: 1.1em">VTP Servers:</span>
 - Can add/modify/delete VLANs
 - ==Switches operate in VTP server mode by default==
@@ -92,6 +93,7 @@ If the interface is in access mode or switchport nonegotiate command, "Negotiati
 - Advertise the latest version of the VLAN database for VTP clients to sync to
 - VTP servers function as VTP clients to VTP servers with a higher revision number
 	- i.e. They will sync to VTP servers with higher revision number
+
 <span style="font-size: 1.1em">VTP Clients:</span>
 - Cannot add/modify/delete VLANs
 - Do not store the VLAN database in NVRAM (VTPv3 does store in NVRAM)
@@ -127,12 +129,13 @@ SW1(config)#vtp domain cisco
 - If a switch with no VTP domain name receives a VTP advertisement with a VTP domain name, it will automatically join that VTP domain
 - If switch receives a VTP advertisement in the same VTP domain with a higher revision number, it will update it's VLAN database to match
 	- <mark style="background: LightCoral">DANGER: connecting an old switch with a higher revision number and same VTP domain name to your network, all switches in the domain will sync their VLAN database to that switch</mark>
+
 <span style="font-size: 1.1em">VTP Transparent Mode:</span>
 - Does not sync its VLAN database to the VLAN database
 - Changes to its own database won't be advertised to other switches
-- Will <mark style="background: #FFF3A3A6;">*forward* VTP advertisements</mark> to switches that are in the <mark style="background: #FFF3A3A6;">same domain</mark> as it
+- Will ==*forward* VTP advertisements== to switches that are in the ==same domain== as it
 - ==Changing the VTP domain to an unused domain, or setting VTP mode to transparent will reset the revision number to 0==
-![[Screenshot 2026-10-08 at 5.22.36 PM.png]]
+![[Screenshot 2026-10-08 at 5.22.36 PM.png | center]]
 
 - If SW3 is in a different domain as the rest of the switches, changes made to SW1 will not reach SW4 and vice versa. SW3 only forwards advertisements to switches in the same domain group as it
 - Changing SW3's domain to match the rest of the switches, it will forward the changes to SW4
@@ -142,3 +145,4 @@ SW1(config)#vtp version [*version number*]
 ```
 - Changing the version number also changes the revision number, and advertisements with new revision number will be sent
 
+[[CCNA]]

@@ -116,20 +116,58 @@ O     192.168.4.0/24 [110/3] via 10.0.13.2, 00:00:09, GigabitEthernet1/0
 	- Sometimes, they might use two. Ex. two companies using different routing protocols might connect their networks to share information
 - Different routing protocols use different metrics, so they cannot be compared
 - Lower AD = better, routing protocol is more 'trustworthy' (more likely to select good routes)
-
-| Route Protocol/Type | AD  |
-| ------------------- | --- |
-| Directly connected  | 0   |
-| Static              | 1   |
-| External BGP (eBGP) | 20  |
-| EIGRP               | 90  |
-| IGRP                | 100 |
-| OSPF                | 110 |
-| IS-IS               | 115 |
-| RIP                 | 120 |
-| EIGRP (external)    | 170 |
-| Internal BGP (iBGP) | 200 |
-| Unusable route      | 255 |
+<center>
+<table>
+<tr>
+	<th>Route Protocol/Type</th>
+	<th>AD</th>
+</tr>
+<tr>
+	<td>Directly connected</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>Static</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>External BGP (eBGP)</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>EIGRP</td>
+	<td>90</td>
+</tr>
+<tr>
+	<td>IGRP</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>OSPF</td>
+	<td>110</td>
+</tr>
+<tr>
+	<td>IS-IS</td>
+	<td>115</td>
+</tr>
+<tr>
+	<td>RIP</td>
+	<td>120</td>
+</tr>
+<tr>
+	<td>EIGRP (external)</td>
+	<td>170</td>
+</tr>
+<tr>
+	<td>Internal BGP (iBGP)</td>
+	<td>200</td>
+</tr>
+<tr>
+	<td>Unusable route</td>
+	<td>255</td>
+</tr>
+</table>
+</center>
 
 ==If the administrative distance is 255, the router does not believe the source of that route and does not install the route in the routing table.==
 
